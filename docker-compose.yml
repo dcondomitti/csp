@@ -1,0 +1,7 @@
+app:
+  build: .
+  dockerfile: Dockerfile-Dev
+  volumes:
+    - .:/go/src/github.com/dcondomitti/csp
+  ports:
+    - 8080

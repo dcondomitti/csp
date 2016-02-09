@@ -1,0 +1,10 @@
+FROM golang:1.5.3
+
+ENV GO15VENDOREXPERIMENT=1
+
+RUN mkdir -p /go/src/github.com/dcondomitti/csp
+WORKDIR /go/src/github.com/dcondomitti/csp
+
+EXPOSE 8080
+
+CMD go run -ldflags "-X main.revision=$(git rev-parse HEAD)" *.go
